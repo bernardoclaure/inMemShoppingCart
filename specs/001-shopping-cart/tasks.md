@@ -34,7 +34,7 @@
 - [x] T009 [US2] Implement `CartController` with endpoints: `GET /catalog`, `POST /cart/add`, `GET /cart`, `POST /cart/clear` (src/main/java/com/example/inMemShoppingCart/web/CartController.java)
 - [x] T010 [US2] Create `catalog.html` template in `src/main/resources/templates/catalog.html` (list items, add buttons)
 - [x] T011 [US2] Create `cart.html` template in `src/main/resources/templates/cart.html` (show entries, totals, clear button)
-- [ ] T012 [US2] Add integration test verifying catalog -> add -> cart flow and clear behavior (src/test/java/.../CartControllerIntegrationTest.java)
+- [x] T012 [US2] Add integration test verifying catalog -> add -> cart flow and clear behavior (src/test/java/.../CartControllerIntegrationTest.java)
 
 ---
 
