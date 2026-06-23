@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vegetable Catalog</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        .button { padding: 8px 14px; background: #2a7ae2; color: #fff; border: none; cursor: pointer; }
+        .button-secondary { background: #666; }
+        .container { max-width: 720px; margin: auto; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Vegetable Catalog</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.price}"></td>
+                <td>
+                    <form th:action="@{/cart/add}" method="post">
+                        <input type="hidden" name="itemId" th:value="${item.id}" />
+                        <button type="submit" class="button">Add to cart</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a th:href="@{/cart}" class="button button-secondary">View cart</a></p>
+</div>
+</body>
+</html>
